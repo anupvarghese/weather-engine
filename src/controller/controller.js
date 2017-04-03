@@ -10,7 +10,7 @@ function retWeather(){
 	return new Promise(function(resolve, reject){
 		var apikey = process.env.apikey;
         var options = {
-          url: "https://api.darksky.net/forecast/apikey/-33.8688,151.2093",
+          url: "https://api.darksky.net/forecast/" + apikey + "/-33.8688,151.2093",
           json: true,
         };        
         
