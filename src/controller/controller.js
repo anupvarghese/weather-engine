@@ -26,7 +26,6 @@ function retWeather(){
 function wtoday(req, res){
 	if(req.query.format !== 'undefined' &&  req.query.format === "json"){
 		retWeather().then(function(result){
-			res.writeHead(200, {'Content-Type': 'application/json'});
 			res.json(result);
 		});
 	}
