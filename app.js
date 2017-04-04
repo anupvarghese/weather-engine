@@ -3,6 +3,11 @@ const express = require('express'),
 	  port = process.env.PORT || 3000,
 	  routes = require('./src/routes');
 	  
+app.get('/', function(req, res){
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.end("Welcome to Sydney Weather Check portal");
+});
+	  
 app.use('/weather', routes);  
 
 

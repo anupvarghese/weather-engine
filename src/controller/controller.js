@@ -26,12 +26,19 @@ function retWeather(){
 function wtoday(req, res){
 	if(req.query.format !== 'undefined' &&  req.query.format === "json"){
 		retWeather().then(function(result){
+			res.writeHead(200, {'Content-Type': 'application/json'});
 			res.json(result);
 		});
+	}
+	else{
+		var str = "<html><head> <title>Sydney Weather </title> </head><body> <h1> Its a nice sunny day! </h1> </body> <!html>";
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		res.end(str);
 	}
 }
 
 
 function wweekly(req, res){
-	res.send(req.query.location + " " + req.query.day);
+	res.writeHead(200, {'Content-Type': 'application/json'});
+	res.end(req.query.location + " " + req.query.day);
 }
