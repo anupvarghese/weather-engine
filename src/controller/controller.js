@@ -12,14 +12,14 @@ function retWeather(){
         var options = {
           url: "https://api.darksky.net/forecast/"+ apikey + "/-33.8688,151.2093",
           json: true,
-        };        
-        
+        };
+
         request(options, function getWeather(err, response, body){
           if (!err && response.statusCode == 200) {
             resolve(body);
-          }    
+          }
         });
-        
+
     });
 }
 
